@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './registerServiceWorker'
-import router from './router'
+import Tres from '@tresjs/core';
 
-createApp(App).use(router).mount('#app')
+import './registerServiceWorker'
+import './index.css'
+import './assets/css/animation.css'
+
+createApp(App).use(Tres).mount('#app')
