@@ -6,7 +6,10 @@
     // Define and destructure props directly
     const props = defineProps({
         title: String,
-        icon: String
+        icon: String,
+        used: String,
+        time: String,
+        link: String,
     });
 
     const tiltElement = ref(null);
@@ -29,13 +32,27 @@
 
 <template>
     <div ref="tiltElement">
-        <div class="w-full green-blue-gradient p-[1px] rounded-[20px] shadow-card">
-            <div class='bg-primary rounded-[20px] py-5 px-12 min-h-[50px] flex justify-evenly items-center'>
-                <img :src="props.icon" :alt="props.title" class='w-16 h-16 object-contain' />
-                <h3 class='text-white text-[18px] font-bold text-center ms-3'>
-                    {{ props.title }}
-                </h3>
-            </div>
+        <div class="w-full green-blue-gradient p-[1px] rounded-[20px] shadow-card group">
+            <a target="__blank" :href="props.link">
+                <div class='bg-primary rounded-[20px] min-h-[50px] p-5'>
+                    <div class="relative overflow-hidden rounded-[20px]">
+                        <div>
+                            <img :src="props.icon" :alt="props.title" class='w-full object-contain hover:opacity-50 duration-300 group-hover:opacity-50' />
+                        </div>
+                        <div class="absolute left-1 top-1 -translate-y-5 group-hover:translate-y-0 duration-300">
+                            <small class="font-base font-bold"><em>{{ props.time }}</em></small>
+                        </div>
+                        <div class="w-full justify-center flex absolute top-[100%] transform translate-y-[100%] duration-300 group-hover:translate-y-[-50%] group-hover:top-[50%]">
+                            <div class="text-center">
+                                <h3 class='text-white text-[18px] font-bold text-center'>
+                                    {{ props.title }}
+                                </h3>
+                                <small class="font-base"><em>{{ props.used }}</em></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </template>

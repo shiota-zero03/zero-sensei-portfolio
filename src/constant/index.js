@@ -1,4 +1,8 @@
-import { Frontend, Backend, Dekstop, Artificial, Teaching, Content, Edulab, Ruangguru, ZMI, Study } from "../assets";
+import { 
+    Frontend, Backend, Dekstop, Artificial, Teaching, Content, 
+    Edulab, Ruangguru, ZMI, Study, 
+    Nexpac, CAAS, ZeroResearch
+} from "../assets";
 
 const NavMenu = [
     {
@@ -93,4 +97,28 @@ const Works = [
     },
 ]
 
-export { NavMenu, Services, Works };
+const Project = [
+    {
+        title: "Zero Research",
+        used: "Laravel, Bootstrap",
+        icon: ZeroResearch,
+        link: 'https://zero-research.fameran-house.my.id/',
+        time: 'June 2024'
+    },
+    {
+        title: "Nexpac",
+        used: "Laravel, Bootstrap",
+        icon: Nexpac,
+        link: 'https://zero-nexpac.fameran-house.my.id/',
+        time: 'June 2024'
+    },
+    {
+        title: "CAAS",
+        used: "PHP",
+        icon: CAAS,
+        link: 'http://zero-caas.fameran-house.my.id/',
+        time: 'August 2021'
+    },
+];
+
+export { NavMenu, Services, Works, Project };

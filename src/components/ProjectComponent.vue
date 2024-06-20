@@ -1,6 +1,6 @@
 <script setup>
     import { ref, onMounted } from 'vue';
-    import { Services } from '../constant';
+    import { Project } from '../constant';
     import { ProjectParallax } from './parallax';
   
     const aboutTitle = ref(null);
@@ -9,8 +9,8 @@
     const descTitle = ref(null);
     const desc = "Here are a few examples of projects that reflect my skills and experience in tackling real-world tasks. With this portfolio, I aim to showcase my ability to handle complex challenges, work with various technologies, and manage projects efficiently.";
 
-    const serviceData = ref([])
-    const services = Services;
+    const projectData = ref([])
+    const project = Project;
   
     onMounted(() => {
         const options = {
@@ -28,7 +28,7 @@
   
         observer.observe(aboutTitle.value);
         observer.observe(descTitle.value);
-        serviceData.value.forEach(ref => observer.observe(ref))
+        projectData.value.forEach(ref => observer.observe(ref))
     });
 </script>
 
@@ -44,8 +44,8 @@
         </div>
 
         <div class='mt-20 flex flex-wrap gap-10'>
-            <div v-for="(ser, index) in services" :key="index" :ref="el => serviceData[index] = el" class="lg:w-[30%] md:w-[46%] w-full fade-in-right" :style="{ transitionDelay: `${index * .4}s` }">
-                <ProjectParallax :title="ser.title" :icon="ser.icon" />
+            <div v-for="(ser, index) in project" :key="index" :ref="el => projectData[index] = el" class="lg:w-[30%] md:w-[46%] w-full fade-in-right" :style="{ transitionDelay: `${index * .4}s` }">
+                <ProjectParallax :title="ser.title" :icon="ser.icon" :used="ser.used" :time="ser.time" :link="ser.link" />
             </div>
         </div>
 

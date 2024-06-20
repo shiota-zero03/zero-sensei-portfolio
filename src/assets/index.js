@@ -36,8 +36,16 @@ import Laravel from './images/tech/laravel.png'
 import Git from './images/tech/git.png'
 import Figma from './images/tech/figma.png'
 
+
+// Project
+import Nexpac from './images/project/nexpac.jpg';
+import ZeroResearch from './images/project/zero-research.jpg';
+import CAAS from './images/project/caas.jpg';
+
 export { 
     Logo, Menu, Close, AI, Avatar, Frontend, Backend, Dekstop, Artificial, Teaching, Content, Edulab, Ruangguru, ZMI, Study,
     HTML, CSS, JS, PHP, MySql, Java, C, CPP, NodeJS, Tailwind, ReactJS, NextJS, VueJS, CodeIgniter, Laravel,
-    Git, Figma
+    Git, Figma,
+
+    Nexpac, ZeroResearch, CAAS
 }
